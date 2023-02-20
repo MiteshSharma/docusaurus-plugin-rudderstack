@@ -1,0 +1,55 @@
+swagger: "2.0"
+
+info:
+  title: "User API"
+  description: >
+    This is config backend API documentation with all needed APIs.
+  version: "1.0.0"
+
+host: "localhost:5000"
+
+schemes:
+  - "http"
+  - "https"
+
+tags:
+  - name: "UserSignup"
+
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+
+paths:
+# User Routes
+  /user:
+    post:
+      summary: User signup API
+      tags:
+        - UserSignup
+      description: User enter email on signup flow and make this API call
+      security:
+        - Bearer: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: user
+          description: new user signup details
+          required: true
+          schema:
+            type: "object"
+            required:
+              - email
+            properties:
+              email:
+                type: "string"
+                example: "test@gmail.com"
+      responses:
+        '200':
+          description: success
+        '400':
+          description: failure
