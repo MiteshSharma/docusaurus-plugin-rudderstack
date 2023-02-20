@@ -176,8 +176,8 @@ const config = {
         require.resolve("../dist/index.js"),
         {
           appUrl: "https://rudderstack.com",
-          writeKey: "2M0AGHXNCiMxoR1rE7t3psT3uRS",
-          dataPlaneUrl: "https://mailinatorfw.dataplane.rudderstack.com",
+          writeKey: "",
+          dataPlaneUrl: "",
         },
       ],
     ],
